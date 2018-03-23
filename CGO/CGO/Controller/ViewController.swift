@@ -14,6 +14,7 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
  @IBOutlet var collectionView: UICollectionView!
  
     var dataModel = [DataModel]()
+    var selectedModel = DataModel()
     override func viewDidLoad() {
         super.viewDidLoad()
   
@@ -80,8 +81,19 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         print("User tapped on item \(indexPath.row)")
+        selectedModel = dataModel[indexPath.row]
+        performSegue(withIdentifier: "sid_detail", sender: nil)
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
         
-       
+        let obj = segue.destination as! DetailViewController
+        obj.dataModel = selectedModel
     }
 }
 

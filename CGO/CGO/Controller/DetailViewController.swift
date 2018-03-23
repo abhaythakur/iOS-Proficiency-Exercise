@@ -8,12 +8,24 @@
 
 import UIKit
 
-class DetailViewController: UIViewController{
+class DetailViewController: UIViewController , UITableViewDataSource , UITableViewDelegate{
 
+    @IBOutlet weak var tblView: UITableView!
+    var dataModel = DataModel()
+    var numberOfRow = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tblView.tableFooterView = UIView()
+       
+            numberOfRow = 2
+            DispatchQueue.main.async {
+               
+               self.tblView.reloadData()
+            }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +34,56 @@ class DetailViewController: UIViewController{
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - UITableViewDataSource
+    
+   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+   {
+     return numberOfRow
     }
-    */
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row == 0
+        {
+            return 350;
+        }
+         return UITableViewAutomaticDimension
+    }
+    
+            
+            
+            
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+
+        
+        if indexPath.row == 0
+        {
+           let   cell = tableView.dequeueReusableCell(withIdentifier: "cell_image", for: indexPath) as! CommonCell
+            
+            cell.lblTitle.text = dataModel.title
+            
+            if dataModel.imageHref!.count > 0
+            {
+               cell.imgView.loadImage(urlString: dataModel.imageHref!)
+            }
+            
+             return cell
+        }else
+        {
+           let   cell = tableView.dequeueReusableCell(withIdentifier: "cell_des", for: indexPath) as! CommonCell
+            
+            cell.lblDes.text = dataModel.description
+            return cell
+        }
+        
+
+
+    }
+    
+    
+    
+     
+    
 
 }
