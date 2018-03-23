@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		588897ED2064A66100D26AC0 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588897EC2064A66100D26AC0 /* CollectionViewCell.swift */; };
+		588897F12064AAF500D26AC0 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588897F02064AAF500D26AC0 /* ApiClient.swift */; };
+		588897F42064C08C00D26AC0 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588897F32064C08C00D26AC0 /* CachedImageView.swift */; };
+		588897F62064C0D100D26AC0 /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588897F52064C0D100D26AC0 /* DiscardableImageCacheItem.swift */; };
+		588897F82064CAB200D26AC0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588897F72064CAB200D26AC0 /* DetailViewController.swift */; };
 		58DA4BB120649D7700A0AD73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DA4BB020649D7700A0AD73 /* AppDelegate.swift */; };
 		58DA4BB320649D7700A0AD73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DA4BB220649D7700A0AD73 /* ViewController.swift */; };
 		58DA4BB620649D7700A0AD73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58DA4BB420649D7700A0AD73 /* Main.storyboard */; };
@@ -18,6 +22,10 @@
 
 /* Begin PBXFileReference section */
 		588897EC2064A66100D26AC0 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		588897F02064AAF500D26AC0 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		588897F32064C08C00D26AC0 /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
+		588897F52064C0D100D26AC0 /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
+		588897F72064CAB200D26AC0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		58DA4BAD20649D7700A0AD73 /* CGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58DA4BB020649D7700A0AD73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58DA4BB220649D7700A0AD73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +52,7 @@
 			children = (
 				588897EC2064A66100D26AC0 /* CollectionViewCell.swift */,
 				58DA4BB220649D7700A0AD73 /* ViewController.swift */,
+				588897F72064CAB200D26AC0 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -52,8 +61,18 @@
 			isa = PBXGroup;
 			children = (
 				58DA4BC22064A1AC00A0AD73 /* DataModel.swift */,
+				588897F32064C08C00D26AC0 /* CachedImageView.swift */,
+				588897F52064C0D100D26AC0 /* DiscardableImageCacheItem.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		588897F22064AB0200D26AC0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				588897F02064AAF500D26AC0 /* ApiClient.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		58DA4BA420649D7700A0AD73 = {
@@ -82,6 +101,7 @@
 				58DA4BB720649D7700A0AD73 /* Assets.xcassets */,
 				58DA4BB920649D7700A0AD73 /* LaunchScreen.storyboard */,
 				58DA4BBC20649D7700A0AD73 /* Info.plist */,
+				588897F22064AB0200D26AC0 /* Network */,
 			);
 			path = CGO;
 			sourceTree = "<group>";
@@ -159,9 +179,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				58DA4BB320649D7700A0AD73 /* ViewController.swift in Sources */,
+				588897F62064C0D100D26AC0 /* DiscardableImageCacheItem.swift in Sources */,
 				58DA4BB120649D7700A0AD73 /* AppDelegate.swift in Sources */,
 				588897ED2064A66100D26AC0 /* CollectionViewCell.swift in Sources */,
 				58DA4BC32064A1AC00A0AD73 /* DataModel.swift in Sources */,
+				588897F42064C08C00D26AC0 /* CachedImageView.swift in Sources */,
+				588897F12064AAF500D26AC0 /* ApiClient.swift in Sources */,
+				588897F82064CAB200D26AC0 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

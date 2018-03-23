@@ -10,11 +10,17 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var imgView: CachedImageView!
     @IBOutlet weak var lblTitle: UILabel!
     
-    func displayContentCell(image: UIImage, title: String) {
-        imgView.image = image
+    func displayContentCell(imageUrl: String, title: String) {
+       
         lblTitle.text = title
+        if (imageUrl.count > 0)
+        {
+            imgView.loadImage(urlString: imageUrl)
+        }
     }
+    
+   
 }

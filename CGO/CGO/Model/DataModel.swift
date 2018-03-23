@@ -14,6 +14,10 @@ struct DataModel {
         let imageHref: String?
         
        
-        
+    init(dictionary: DataModelJSON) {
+        self.title = dictionary["title"] as? String ?? ""
+        self.description = dictionary["description"] as? String ?? ""
+        self.imageHref = dictionary["imageHref"] as? String ?? ""
+    }
 }
 
