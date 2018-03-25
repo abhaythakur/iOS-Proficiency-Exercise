@@ -90,7 +90,13 @@
                             <constraint firstItem="gQb-oW-JKF" firstAttribute="top" secondItem="SY4-wu-XJ8" secondAttribute="bottom" id="myu-ty-N29"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="CGO" id="pLm-DR-PGg"/>
+                    <navigationItem key="navigationItem" title="CGO" id="pLm-DR-PGg">
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="199-Yw-E2j">
+                            <connections>
+                                <action selector="refreshAction:" destination="BYZ-38-t0r" id="U7w-N4-BaF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="gQb-oW-JKF" id="aQb-e8-VGE"/>
                         <segue destination="xhw-p9-1LH" kind="show" identifier="sid_detail" id="TOf-lv-Elg"/>

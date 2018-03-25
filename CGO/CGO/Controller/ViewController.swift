@@ -95,5 +95,19 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
         let obj = segue.destination as! DetailViewController
         obj.dataModel = selectedModel
     }
+    
+    
+    @IBAction func refreshAction(_ sender: Any) {
+        getCountryFactsData {
+            DispatchQueue.main.async {
+                self.collectionView.reloadSections(IndexSet(integer: 0))
+            }
+        }
+        
+    }
+    
+    
+    
+    
 }
 
